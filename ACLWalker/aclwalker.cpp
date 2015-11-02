@@ -19,7 +19,7 @@ ACLWalker::ACLWalker(QWidget *parent)
 	m_filesModel->setRootPath(sRootPath);
 	ui.treeView_bro_files->setModel(m_filesModel);
 
-	connect(ui.treeView_bro_dirs, SIGNAL(clicked(QModelIndex)), this, SLOT(on_treeView_clicked(QModelIndex)));
+	connect(ui.treeView_bro_dirs, SIGNAL(clicked(QModelIndex)), this, SLOT(on_treeView_bro_dirs_clicked(QModelIndex)));
 	connect(m_aclWrapper, SIGNAL(GetObjectInfo(AclObject*)), this, SLOT(on_retrieveAcl(AclObject*)));
 
 	
@@ -31,18 +31,18 @@ ACLWalker::~ACLWalker()
 }
 
 
-void ACLWalker::on_treeView_clicked(QModelIndex index)
+void ACLWalker::on_treeView_bro_dirs_clicked(QModelIndex index)
 {
 	QString sPath = m_dirModel->fileInfo(index).absoluteFilePath();
 	ui.treeView_bro_files->setRootIndex(m_filesModel->setRootPath(sPath));
-
-	//m_aclWrapper->GetObjectOwner(sPath);
-
 	m_aclWrapper->ProcessPath(sPath);
-
-
 }
 
+void ACLWalker::on_treeView_bro_files_clicked(QModelIndex index)
+{
+	QString sPath = m_filesModel->fileInfo(index).absoluteFilePath();
+	m_aclWrapper->ProcessPath(sPath);
+}
 
 void ACLWalker::on_retrieveAcl(AclObject * aclObj)
 {

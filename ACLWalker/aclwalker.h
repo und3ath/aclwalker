@@ -25,7 +25,8 @@ private:
 
 
 public slots:
-	void on_treeView_clicked(QModelIndex index);
+	void on_treeView_bro_dirs_clicked(QModelIndex index);
+	void on_treeView_bro_files_clicked(QModelIndex index);
 	void on_retrieveAcl(AclObject * aclObj);
 
 };

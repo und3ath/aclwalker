@@ -44,10 +44,7 @@ class ACLWrapper : public QObject
 public:
 	ACLWrapper();
 	~ACLWrapper();
-
-	QString GetObjectOwner(QString Path);
 	void ProcessPath(QString path);
-
 
 signals:
 	void GetObjectInfo(AclObject * obj);

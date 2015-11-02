@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
-    <height>608</height>
+    <width>779</width>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>718</width>
+     <width>779</width>
      <height>21</height>
     </rect>
    </property>
@@ -170,11 +170,6 @@
           </widget>
          </item>
         </layout>
-       </widget>
-       <widget class="QWidget" name="tab_acl_edit">
-        <attribute name="title">
-         <string>Edit</string>
-        </attribute>
        </widget>
       </widget>
      </item>
