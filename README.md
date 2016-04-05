@@ -1,1 +1,1 @@
-Simple QT app to disaplay acls on directory and file under windows.
+Simple QT app to display acls on directory and file under windows.
